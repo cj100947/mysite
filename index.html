@@ -9,34 +9,43 @@
       background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg");
       background-repeat: no-repeat;
       background-position: right top;
-      background-attachment: scroll;
-      background-color: lightblue;
-      margin-right: 200px;
+      background-size: 30%; /* Added size control for the logo */
+      background-color: #A7C6ED; /* Softer background color */
+      margin: 0;
       font-family: Tahoma, Verdana, sans-serif;
+      color: #333; /* Better text contrast */
+      padding: 20px;
     }
 
     h1 {
-      color: blue;
+      color: #00529B; /* Blue shade for the title */
       text-align: center;
+      font-size: 3rem; /* Larger, bolder header */
+      margin-bottom: 20px;
     }
 
     p {
-      font-family: Tahoma, Verdana, sans-serif;
+      font-size: 1.2rem; /* Slightly bigger text for readability */
       text-align: center;
+      line-height: 1.6;
     }
 
-    a:link, a:visited {
-      background-color: gold;
-      color: black;
-      padding: 14px 25px;
+    /* Links and buttons */
+    a {
+      background-color: #FFD700; /* Gold button color */
+      color: #000;
+      padding: 14px 30px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       margin-top: 20px;
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
     }
 
     a:hover, a:active {
-      background-color: blue;
+      background-color: #00529B; /* Blue when hovered */
+      transform: translateY(-3px); /* Slight pop on hover */
     }
 
     /* Button in the bottom-right corner */
@@ -44,28 +53,30 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: gold;
-      color: black;
+      background-color: #FFD700;
+      color: #000;
       padding: 14px 25px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     .trophies-btn:hover, .trophies-btn:active {
-      background-color: blue;
+      background-color: #00529B;
+      transform: translateY(-3px); /* Hover animation */
     }
+
   </style>
 </head>
 <body>
 
-  <h1>All about Man City!!!!</h1>
+  <h1>All About Man City!!!</h1>
 
-  <p>Many City in my opinion is one of the best teams in the world</p>
-  <p>I have been a Man City fan for a long time.<br>
-    In this website you will learn a lot about Man City's history and current players.<br>
-    So let's go 3...2...1...
-  </p>
+  <p>Man City, in my opinion, is one of the best teams in the world!</p>
+  <p>I've been a fan for a long time, and this site will teach you all about their history and current squad.<br>
+    So, let's go! 3...2...1...</p>
 
   <!-- Button to Trophies Page -->
   <a href="trophies.html" class="trophies-btn">Man City's Trophies</a>
