@@ -34,6 +34,7 @@
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
 
     .player-card:hover {
@@ -58,6 +59,55 @@
     .player-position {
       font-size: 1rem;
       color: #00529B;
+    }
+
+    /* Pop-up styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .popup img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .popup .close-btn {
+      background-color: #00529B;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .popup .close-btn:hover {
+      background-color: #003E7E;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
     }
 
     a {
@@ -91,36 +141,71 @@
 
   <div class="squad-container">
     <!-- Player 1 -->
-    <div class="player-card">
-      <img src="https://i.guim.co.uk/img/media/795ff9fc82d52b955c492afc63b9e25936be892f/0_1548_5689_3413/master/5689.jpg?width=620&dpr=2&s=none&crop=none" alt="Player 1" class="player-img">
+    <div class="player-card" onclick="showPopup('Erling Haaland', 'Striker', 'An unstoppable goal machine, Haaland has taken the Premier League by storm!', 'https://static.independent.co.uk/2023/05/04/12/9c642c7c28596c13240483fbc8c89442Y29udGVudHNlYXJjaGFwaSwxNjgzMjg0Mzg5-2.72006625.jpg?quality=75&width=1250&crop=3%3A2%2Csmart&auto=webp')">
+      <img src="https://static.independent.co.uk/2023/05/04/12/9c642c7c28596c13240483fbc8c89442Y29udGVudHNlYXJjaGFwaSwxNjgzMjg0Mzg5-2.72006625.jpg?quality=75&width=1250&crop=3%3A2%2Csmart&auto=webp" alt="Erling Haaland" class="player-img">
       <div class="player-name">Erling Haaland</div>
       <div class="player-position">Forward</div>
     </div>
 
     <!-- Player 2 -->
-    <div class="player-card">
-      <img src="https://e0.365dm.com/24/04/2048x1152/skysports-champions-league_6524821.jpg?20240417214028" class="player-img">
+    <div class="player-card" onclick="showPopup('Kevin De Bruyne', 'Midfielder', 'The heart of Man City\'s midfield, known for his vision and assists.', 'https://via.placeholder.com/150')">
+      <img src="https://via.placeholder.com/150" alt="Kevin De Bruyne" class="player-img">
       <div class="player-name">Kevin De Bruyne</div>
       <div class="player-position">Midfielder</div>
     </div>
 
     <!-- Player 3 -->
-    <div class="player-card">
-      <img src="https://cdn.vox-cdn.com/thumbor/LUHNZ0zULjLUiLKczN8Fu2u0zro=/0x0:3240x2171/1520x1013/filters:focal(1189x493:1707x1011):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/71639578/1244562381.0.jpg" alt="Player 3" class="player-img">
+    <div class="player-card" onclick="showPopup('Rúben Dias', 'Defender', 'A rock-solid center-back, Dias is key to City\'s defense.', 'https://assets.goal.com/images/v3/blta583f2d8f7d81420/dias16-9.jpg?auto=webp&format=pjpg&width=1080&quality=60')">
+      <img src="https://assets.goal.com/images/v3/blta583f2d8f7d81420/dias16-9.jpg?auto=webp&format=pjpg&width=1080&quality=60" alt="Rúben Dias" class="player-img">
       <div class="player-name">Rúben Dias</div>
       <div class="player-position">Defender</div>
     </div>
 
-    <!-- Add more players as needed -->
+    <!-- Player 4 -->
+    <div class="player-card" onclick="showPopup('Phil Foden', 'Midfielder', 'The Stockport Iniesta, Phil Foden is a rising star at City.', 'https://cdn1.manchestercity.news/uploads/30/2024/02/GettyImages-1988700133-1140x776.jpg')">
+      <img src="https://cdn1.manchestercity.news/uploads/30/2024/02/GettyImages-1988700133-1140x776.jpg" alt="Phil Foden" class="player-img">
+      <div class="player-name">Phil Foden</div>
+      <div class="player-position">Midfielder</div>
+    </div>
+
+    <!-- Player 5 -->
+    <div class="player-card" onclick="showPopup('Ederson', 'Goalkeeper', 'One of the best goalkeepers in the world, Ederson is known for his passing accuracy.', 'https://static.independent.co.uk/2024/08/11/13/2024-08-10T164130Z_1399354921_UP1EK8A1AD1V3_RTRMADP_3_SOCCER-ENGLAND-MUN-MCI-REPORT.jpg?quality=75&width=1368&auto=webp')">
+      <img src="https://static.independent.co.uk/2024/08/11/13/2024-08-10T164130Z_1399354921_UP1EK8A1AD1V3_RTRMADP_3_SOCCER-ENGLAND-MUN-MCI-REPORT.jpg?quality=75&width=1368&auto=webp" alt="Ederson" class="player-img">
+      <div class="player-name">Ederson</div>
+      <div class="player-position">Goalkeeper</div>
+    </div>
   </div>
 
-  <!-- Navigation Button -->
+  <!-- Pop-up -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <img id="popup-img" src="" alt="Player">
+    <h2 id="popup-name"></h2>
+    <p id="popup-info"></p>
+    <a class="close-btn" onclick="closePopup()">Close</a>
+  </div>
+
+  <!-- Back to Home -->
   <a href="index.html">Back to Home</a>
 
   <footer>
     <p>&copy; 2025 Man City's Squad. Built with 💙 by a City fan!</p>
   </footer>
 
+  <script>
+    function showPopup(name, position, info, img) {
+      document.getElementById('popup-name').innerText = name + " (" + position + ")";
+      document.getElementById('popup-info').innerText = info;
+      document.getElementById('popup-img').src = img;
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
-
