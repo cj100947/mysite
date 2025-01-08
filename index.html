@@ -8,66 +8,68 @@
     body {
       background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg");
       background-repeat: no-repeat;
-      background-position: center top;
-      background-size: 200px; /* Centered and appropriately sized logo */
+      background-position: right top;
+      background-size: 30%;
       background-color: #A7C6ED;
       margin: 0;
       font-family: Tahoma, Verdana, sans-serif;
       color: #333;
       padding: 20px;
-      text-align: center;
     }
 
     h1 {
       color: #00529B;
+      text-align: center;
       font-size: 3rem;
-      margin-top: 240px; /* Offset to account for the logo */
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.2rem;
+      text-align: center;
       line-height: 1.6;
     }
 
+    /* Links and buttons */
     a {
       background-color: #FFD700;
       color: #000;
       padding: 14px 30px;
+      text-align: center;
       text-decoration: none;
       display: inline-block;
+      margin: 10px auto;
       border-radius: 5px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 20px;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
-    a:hover {
+    a:hover, a:active {
       background-color: #00529B;
-      color: #fff;
-      transform: scale(1.1);
+      transform: translateY(-3px);
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #666;
+    .links-container {
+      text-align: center;
+      margin-top: 30px;
     }
+
   </style>
 </head>
 <body>
 
   <h1>All About Man City!!!</h1>
 
-  <p>Man City is one of the best teams in the world!<br>
-     Dive into their history, current squad, and achievements. Let’s go!</p>
+  <p>Man City, in my opinion, is one of the best teams in the world!</p>
+  <p>I've been a fan for a long time, and this site will teach you all about their history, current squad, and their incredible achievements.<br>
+    So, let's go! 3...2...1...</p>
 
-  <!-- Navigation Button -->
-  <a href="Trophies.html">Man City's Trophies</a>
-
-  <footer>
-    <p>&copy; 2025 All About Man City. Built with 💙  by a City fan!</p>
-  </footer>
+  <!-- Links Section -->
+  <div class="links-container">
+    <!-- Link to Trophies Page -->
+    <a href="Trophies.html">Man City's Trophies</a>
+    <!-- Link to Squad Page -->
+    <a href="Squad.html">Man City's Squad</a>
+  </div>
 
 </body>
 </html>
