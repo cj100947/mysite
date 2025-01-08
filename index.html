@@ -8,78 +8,66 @@
     body {
       background-image: url("https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg");
       background-repeat: no-repeat;
-      background-position: right top;
-      background-size: 30%; /* Added size control for the logo */
-      background-color: #A7C6ED; /* Softer background color */
+      background-position: center top;
+      background-size: 200px; /* Centered and appropriately sized logo */
+      background-color: #A7C6ED;
       margin: 0;
       font-family: Tahoma, Verdana, sans-serif;
-      color: #333; /* Better text contrast */
+      color: #333;
       padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      color: #00529B; /* Blue shade for the title */
-      text-align: center;
-      font-size: 3rem; /* Larger, bolder header */
-      margin-bottom: 20px;
+      color: #00529B;
+      font-size: 3rem;
+      margin-top: 240px; /* Offset to account for the logo */
     }
 
     p {
-      font-size: 1.2rem; /* Slightly bigger text for readability */
-      text-align: center;
+      font-size: 1.2rem;
       line-height: 1.6;
     }
 
-    /* Links and buttons */
     a {
-      background-color: #FFD700; /* Gold button color */
-      color: #000;
-      padding: 14px 30px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
-    }
-
-    a:hover, a:active {
-      background-color: #00529B; /* Blue when hovered */
-      transform: translateY(-3px); /* Slight pop on hover */
-    }
-
-    /* Button in the bottom-right corner */
-    .trophies-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
       background-color: #FFD700;
       color: #000;
-      padding: 14px 25px;
-      text-align: center;
+      padding: 14px 30px;
       text-decoration: none;
       display: inline-block;
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s, transform 0.2s;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: all 0.3s ease;
     }
 
-    .trophies-btn:hover, .trophies-btn:active {
+    a:hover {
       background-color: #00529B;
-      transform: translateY(-3px); /* Hover animation */
+      color: #fff;
+      transform: scale(1.1);
     }
 
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
 
   <h1>All About Man City!!!</h1>
 
-  <p>Man City, in my opinion, is one of the best teams in the world!</p>
-  <p>I've been a fan for a long time, and this site will teach you all about their history and current squad.<br>
-    So, let's go! 3...2...1...</p>
+  <p>Man City is one of the best teams in the world!<br>
+     Dive into their history, current squad, and achievements. Let’s go!</p>
 
-  <!-- Button to Trophies Page -->
-  <a href="trophies.html" class="trophies-btn">Man City's Trophies</a>
+  <!-- Navigation Button -->
+  <a href="trophies.html">Man City's Trophies</a>
+
+  <footer>
+    <p>&copy; 2025 All About Man City. Built with ❤️ by a City fan!</p>
+  </footer>
 
 </body>
 </html>
